@@ -1,0 +1,55 @@
+/* FullscreenBook.css */
+.fullscreen-book {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 30px;
+    z-index: 1000;
+    overflow: auto;
+    animation: fadeIn 0.5s ease;
+  }
+  
+  .fullscreen-book .close-button {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: rgba(255, 255, 255, 0.2);
+    border: none;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.3s ease;
+  }
+  
+  .fullscreen-book .close-button:hover {
+    background: rgba(255, 255, 255, 0.4);
+    transform: scale(1.1);
+  }
+  
+  .fullscreen-image {
+    max-width: 80%;
+    border-radius: 12px;
+    margin-bottom: 20px;
+  }
+  
+  .fullscreen-book h1, .fullscreen-book p {
+    margin: 15px 0;
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  

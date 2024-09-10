@@ -1,0 +1,237 @@
+body {
+  font-family: 'Georgia', serif;
+  background: linear-gradient(135deg, #e6e6fa, #d8bfd8); /* Even darker Thistle gradient */
+  margin: 0;
+  padding: 0;
+  color: #333;
+  transition: all 0.3s ease;
+}
+
+.app {
+  max-width: 1100px;
+  margin: 50px auto;
+  padding: 40px;
+  background: #ffffff;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.app:hover {
+  transform: scale(1.01);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+}
+
+header {
+  text-align: center;
+  margin-bottom: 50px;
+  animation: fadeIn 1s ease;
+}
+
+header h1 {
+  font-size: 4rem;
+  color: #4a4a4a;
+  font-weight: 900;
+  letter-spacing: 1px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+h2 {
+  font-size: 2.8rem;
+  color: #b9a0c3; /* Darker Thistle color */
+  margin-bottom: 30px;
+  text-align: center;
+  font-weight: 700;
+  position: relative;
+  animation: slideIn 1s ease;
+}
+
+h2::after {
+  content: '';
+  display: block;
+  width: 100px;
+  height: 4px;
+  background: #b9a0c3; /* Darker Thistle color */
+  margin: 12px auto;
+  border-radius: 5px;
+}
+
+.upload-form, .search-bar {
+  margin-bottom: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px; /* Increased gap for better spacing */
+}
+
+.upload-form input, .upload-form textarea, .search-bar input {
+  width: 100%;
+  padding: 18px;
+  border: 2px solid #ddd;
+  border-radius: 10px;
+  transition: all 0.3s ease;
+  background: #f9f9f9;
+  font-size: 1.1rem;
+}
+
+.upload-form input:focus, .upload-form textarea:focus, .search-bar input:focus {
+  border-color: #b9a0c3; /* Darker Thistle */
+  outline: none;
+  background: #fff;
+  box-shadow: 0 0 8px rgba(185, 160, 195, 0.3); /* Darker Thistle shadow */
+}
+
+.submit-button, .search-bar button {
+  padding: 16px 30px;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  font-size: 1.3rem;
+  color: white;
+  background: linear-gradient(135deg, #b9a0c3, #9a7b8b); /* Darker shades of Thistle */
+  box-shadow: 0 8px 16px rgba(185, 160, 195, 0.3);
+  transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+  margin-top: 10px; /* Added margin for spacing */
+}
+
+.submit-button:hover, .search-bar button:hover {
+  background: linear-gradient(135deg, #9a7b8b, #6d4c6e); /* Even darker shades of Thistle */
+  transform: scale(1.05);
+  box-shadow: 0 12px 24px rgba(109, 76, 110, 0.5); /* Even darker shade */
+}
+
+.submit-button:active, .search-bar button:active {
+  transform: scale(1.02);
+  background: #9a7b8b; /* Darker Thistle */
+}
+
+.search-bar input {
+  border-radius: 50px;
+  padding: 14px 20px;
+  font-size: 16px;
+  background: #f1f1f1;
+}
+
+.book-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: center;
+  animation: fadeIn 1s ease;
+}
+
+.book-card {
+  background: white;
+  padding: 25px;
+  border: 1px solid #ddd;
+  border-radius: 15px;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  width: 300px;
+  text-align: center;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+.book-card:hover {
+  transform: scale(1.08);
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.2);
+}
+
+.book-image {
+  max-width: 100%;
+  border-radius: 12px;
+  margin-bottom: 15px;
+}
+
+.book-details h3 {
+  margin: 12px 0;
+  color: #333;
+  font-weight: 600;
+}
+
+.fullscreen-book {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.85);
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+  z-index: 1000;
+  overflow: auto;
+  animation: fadeIn 0.5s ease;
+}
+
+.fullscreen-book .close-button {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: rgba(255, 255, 255, 0.3);
+  border: none;
+  color: white;
+  font-size: 24px;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.fullscreen-book .close-button:hover {
+  background: rgba(255, 255, 255, 0.5);
+  transform: scale(1.1);
+}
+
+.fullscreen-image {
+  max-width: 80%;
+  border-radius: 12px;
+  margin-bottom: 30px;
+}
+
+.fullscreen-book h1, .fullscreen-book p {
+  margin: 20px 0;
+}
+
+@keyframes fadeIn {
+  from {
+      opacity: 0;
+  }
+  to {
+      opacity: 1;
+  }
+}
+
+@keyframes slideIn {
+  from {
+      transform: translateX(-100%);
+      opacity: 0;
+  }
+  to {
+      transform: translateX(0);
+      opacity: 1;
+  }
+}
+
+.toggle-upload-button {
+  background: linear-gradient(135deg, #b9a0c3, #9a7b8b); /* Darker shades of Thistle */
+  border: none;
+  border-radius: 50px;
+  color: white;
+  font-size: 18px;
+  padding: 16px 32px;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+  margin-top: 20px;
+  box-shadow: 0 8px 16px rgba(185, 160, 195, 0.3);
+}
+
+.toggle-upload-button:hover {
+  background: linear-gradient(135deg, #9a7b8b, #6d4c6e); /* Even darker shades of Thistle */
+  transform: scale(1.05);
+  box-shadow: 0 12px 24px rgba(109, 76, 110, 0.5);
+}
+
+.toggle-upload-button:focus {
+  outline: none;
+}
